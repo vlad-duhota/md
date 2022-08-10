@@ -66,12 +66,13 @@
 
 #### Як створити поле
 ---
-``` Field::make( 'complex', 'advantages', 'Список переваг' )
-        ->add_fields( array(
-            Field::make( 'image', 'advantages_img', 'Картинка' )
-            ->set_value_type( 'url' ),
-            Field::make( 'text', 'advantages_title', 'Заголовок' ),
-        ) ),
+``` 
+Field::make( 'complex', 'advantages', 'Список переваг' )
+    ->add_fields( array(
+        Field::make( 'image', 'advantages_img', 'Картинка' )
+        ->set_value_type( 'url' ),
+        Field::make( 'text', 'advantages_title', 'Заголовок' ),
+    ) ),
 ```
 #### Як вивести поле
 ---
@@ -85,16 +86,16 @@
 ---
 ###### Виведення
 ```
-    <?php if(! empty($advantages)) : ?>
-            <ul class="advantages__list">
-            <?php foreach($advantages as $advantage) : ?>
-                <li class="advantages__item">
+<?php if(! empty($advantages)) : ?>
+    <ul class="advantages__list">
+        <?php foreach($advantages as $advantage) : ?>
+            <li class="advantages__item">
       			<img src="<?php echo $advantage['advantages_img']?>">
-                	<h3><?php echo $advantage['advantages_title']?></h3>
-                </li>
-            <?php endforeach ?>
-            </ul>
-     <?php endif ?>
+                <h3><?php echo $advantage['advantages_title']?></h3>
+            </li>
+        <?php endforeach ?>
+    </ul>
+<?php endif ?>
 ```
 ---
 ## Як зробити кілька сторінок
@@ -111,11 +112,11 @@
 
 2.	Виводимо наше меню на сторінку
 ``` 
-   <?php
-        wp_nav_menu( array( 
-            'theme_location' => '', 
-            'container_class' => 'ваш клас' ) ); 
-    ?>
+<?php
+    wp_nav_menu( array( 
+        'theme_location' => '', 
+        'container_class' => 'ваш клас' ) ); 
+?>
 ```
 3.	Змінюємо стилі оскільки wordpress по іншому дає класи, їх можна подивитися, використовуючи devtools
 4.	Наше меню готове, і в будь’який момент ми можемо його змінювати не використовуючи код
